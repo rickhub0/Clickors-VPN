@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clickors VPN</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Clickors VPN</h1>
+        <div class="status-pill" id="statusPill" aria-live="polite">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusLabel">Disconnected</span>
+        </div>
+      </header>
+
+      <section class="panel server-panel">
+        <h2>Server Selection</h2>
+        <label class="server-option">
+          <input type="radio" name="server" value="londonA" />
+          <span class="server-name">London A</span>
+        </label>
+        <label class="server-option">
+          <input type="radio" name="server" value="londonB" />
+          <span class="server-name">London B</span>
+        </label>
+      </section>
+
+      <button id="connectButton" class="connect-btn" type="button">Connect</button>
+
+      <section class="panel status-panel">
+        <h2>Connection Dashboard</h2>
+
+        <div class="status-grid">
+          <div class="metric-row">
+            <span class="metric-label">🌐 Public IP</span>
+            <strong id="publicIp">Loading...</strong>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">⏱ Connection timer</span>
+            <strong id="connectedFor">--:--:--</strong>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">🔌 Connection status</span>
+            <strong id="connectionState">🔴 Disconnected</strong>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">🖥 Server name</span>
+            <strong id="currentServer">-</strong>
+          </div>
+          <div class="metric-row key-row">
+            <span class="metric-label">🔑 Key</span>
+            <div class="key-content">
+              <strong id="keyState">Not Added ❌</strong>
+              <span id="maskedKey" class="masked-key">******</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="errorBox" class="error-box" role="alert" aria-live="assertive">
+          <span id="errorText"></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

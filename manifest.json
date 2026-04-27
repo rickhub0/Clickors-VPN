@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Clickors VPN",
+  "description": "Profile-based dual-server proxy assignment for multi-login workflows.",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Clickors VPN",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+"permissions": [
+  "proxy",
+  "storage",
+  "activeTab",
+  "webRequest",
+  "webRequestAuthProvider"
+],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
