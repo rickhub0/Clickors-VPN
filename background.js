@@ -20,18 +20,18 @@ const DEFAULT_SERVERS = {
   londonA: {
     id: 'londonA',
     name: 'London A',
-    host: '143.110.165.44',
+    host: 'PASTE_VPS_IP_HERE',
     port: 39667,
-    username: 'clickors',
-    password: 'vpn123'
+    username: 'USERNAME',
+    password: 'PASSWORD'
   },
   londonB: {
     id: 'londonB',
     name: 'London B',
-    host: '46.101.17.206',
+    host: 'PASTE_VPS_IP_HERE',
     port: 39667,
-    username: 'clickors',
-    password: 'vpn123'
+    username: 'USERNAME',
+    password: 'PASSWORD'
   }
 };
 
@@ -145,8 +145,8 @@ async function switchServer(serverId) {
 chrome.webRequest.onAuthRequired.addListener(
   () => ({
     authCredentials: {
-      username: 'clickors',
-      password: 'vpn123'
+      username: 'USERNAME',
+      password: 'PASSWORD'
     }
   }),
   { urls: ["<all_urls>"] },
